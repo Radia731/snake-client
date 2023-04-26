@@ -1,6 +1,7 @@
 let connection;
 
 const setupInput = function (conn) {
+  console.log("hello");
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -10,6 +11,7 @@ const setupInput = function (conn) {
   return stdin;
 };
 const handleUserInput = function (key) {
+  console.log(key);
   if (key === "\u0003") {
     process.exit();
   }
@@ -29,7 +31,5 @@ const handleUserInput = function (key) {
     connection.write("Say: game on");
   }
 };
-
-
 
 module.exports = { setupInput };
